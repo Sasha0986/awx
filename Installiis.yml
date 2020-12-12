@@ -3,10 +3,10 @@
   gather_facts: false
   tasks:
       - name: Install IIS (Web-Server only)
-        ansible.windows.win_feature:
+        win_feature:
           name: Web-Server
           state: present
           
       - name: Reboot if installing Web-Server feature requires it
-        ansible.windows.win_reboot:
+        win_reboot:
         when: win_feature.reboot_required
