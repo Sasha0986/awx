@@ -1,4 +1,8 @@
-- name: Install IIS (Web-Server only)
-  ansible.windows.win_feature:
-    name: Web-Server
-    state: present
+- name:  Install IIS server
+  hosts: all
+  gather_facts: false
+  tasks:
+      - name: Install IIS (Web-Server only)
+        ansible.windows.win_feature:
+          name: Web-Server
+          state: present
