@@ -14,7 +14,7 @@
   - name: Copy script file from windows share to local
     win_copy:
       src: \\dc01.shliss.ru\folder\files\test.ps1
-      dest: c:\temp\
+      dest: c:\Temp\
       remote_src: True
     become: yes
     become_method: runas
