@@ -12,10 +12,7 @@
         Set-Content -Path C:\Temp\test2.txt -Value $text
 
   - name: Copy a single file
-    win_shell: |
-      $src = \\dc01.shliss.ru\folder\files\test.ps1
-      $dest = C:\Temp
-      xcopy $src $dest        
+    win_shell: xcopy \\dc01.shliss.ru\folder\files\test.ps1 C:\Temp /H /Y /C /R /S       
       
   - name: Run a script
     win_shell: C:\temp\test.ps1
