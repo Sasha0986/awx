@@ -15,7 +15,7 @@
     win_shell:
       $Destination = "c:\temp"
       $Source = "\\dc01.shliss.ru\folder\files\"
-      Copy-Item -Path $Source\*.* -Destination $Destination -Force
+      Copy-Item -Path $Source -Destination $Destination -Force
 
   - name: Run a script
     win_shell: C:\temp\test.ps1
