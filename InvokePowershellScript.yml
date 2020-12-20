@@ -10,6 +10,7 @@
         $text = Get-Content C:\Temp\test.txt
         $text += ' additional text'
         Set-Content -Path C:\Temp\test2.txt -Value $text
+        
   - name: Create a mapped drive under Z
     win_mapped_drive:
       letter: Z
@@ -18,7 +19,7 @@
       password: QQQ111www222
   
   - name: Copy a single file
-    win_shell: xcopy /S /E \\dc01.shliss.ru\c$\folder\files\  c:\temp     
+    win_shell: copy Z:  c:\temp     
       
   - name: Run a script
     win_shell: C:\temp\test.ps1
