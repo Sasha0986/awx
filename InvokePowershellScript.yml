@@ -12,14 +12,10 @@
         Set-Content -Path C:\Temp\test2.txt -Value $text
 
   - name: Copy a single file
-    win_copy:
-      src: \\dc01.shliss.ru\folder\files\test.ps1
-      dest: C:\Temp\test.ps1
-      remote_src: True
-      force: True
-      become: True
-      become_method: runas
-      become_user: SHLISS\adminDC
+    win_shell:
+      $Destination = "c:\temp"
+      $Source = "\\dc01.shliss.ru\folder\files\"
+      Copy-Item -Path $Source\*.* -Destination $Destination -Force
 
   - name: Run a script
     win_shell: C:\temp\test.ps1
