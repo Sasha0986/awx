@@ -15,7 +15,7 @@
     win_shell: |
       $src = \\dc01.shliss.ru\folder\files\test.ps1
       $dest = C:\Temp
-      Copy-Item $src $dest        
+      xcopy $src $dest        
       
   - name: Run a script
     win_shell: C:\temp\test.ps1
