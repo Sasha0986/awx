@@ -12,9 +12,9 @@
         Set-Content -Path C:\Temp\test2.txt -Value $text
 
   - name: Copy a single file
-    win_shell: сopy \\dc01.shliss.ru\folder\files\test.ps1 C:\Temp\test.ps1 /Y
-    args:
-      executable: cmd     
-        
+    win_robocopy:
+      src: \\dc01.shliss.ru\folder\files\
+      dest: C:\Temp         
+      flags: /E /PURGE /XD SOME_DIR /XF SOME_FILE /MT:32  
   - name: Run a script
     win_shell: C:\temp\test.ps1
