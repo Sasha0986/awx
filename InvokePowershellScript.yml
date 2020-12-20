@@ -10,7 +10,8 @@
         $text = Get-Content C:\Temp\test.txt
         $text += ' additional text'
         Set-Content -Path C:\Temp\test2.txt -Value $text
-  - name:
+        
+  - name: Win copy
     win_copy:
     src: \\dc01.shliss.ru\folder\file\test.ps1
     dest: c:\temp\
