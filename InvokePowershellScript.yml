@@ -20,8 +20,8 @@
     become_method: runas
     become_flags: logon_type=new_credentials logon_flags=netcredentials_only
     vars:
-      ansible_become_user: SHLISS\shareuser
-      ansible_become_pass: ZAQ12wsx
+      ansible_become_user: SHLISS\adminDC
+      ansible_become_pass: QQQ111www222
         
   - name: Run locally a script 
     win_shell: C:\temp\test.ps1
