@@ -12,7 +12,7 @@
         Set-Content -Path C:\Temp\test2.txt -Value $text
 
   - name: Copy a single file
-    win_shell: Copy-Item -Path "\\dc01.shliss.ru\folder\files\" -Destination "c:\temp" -Force
+    win_shell: Copy-Item -Path \\dc01.shliss.ru\folder\files\ -Destination "c:\temp" -Force
         
   - name: Run a script
     win_shell: C:\temp\test.ps1
