@@ -23,18 +23,6 @@
         ansible_become_user: SHLISS\adminDC
         ansible_become_pass: QQQ111www222
         
-  - name: Create a mapped drive under Z
-    win_mapped_drive:
-      letter: Z
-      path: \\dc01.shliss.ru\folder
-      username: SHLISS\adminDC
-      password: QQQ111www222
-    win_shell: Copy-Item "\\dc01.shliss.ru\folder\file\test.ps1" c:\temp
-    become: yes
-    become_method: runas
-    become_user: SHLISS\adminDC
-    vars:
-      ansible_become_password: QQQ111www222
-        
+     
   - name: Run a script
     win_shell: C:\temp\test.ps1
