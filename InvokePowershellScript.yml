@@ -3,7 +3,7 @@
   tasks:
 
   - name: Run PowerShell command
-    win_shell: Set-Content -Path C:\temp\test.txt -Value 'Hello World'
+    win_shell: Set-Content -Path C:\temp\test.txt -Value 'Single line'
 
   - name: Run multi-lined shell commands
     win_shell: |
@@ -11,12 +11,12 @@
         $text += ' additional text'
         Set-Content -Path C:\Temp\test2.txt -Value $text
         
-  - name: Win copy
+  - name: Copy script file from windows share to local
     win_copy:
       src: \\dc01.shliss.ru\folder\files\test.ps1
       dest: c:\temp\
       remote_src: True
           
      
-  - name: Run a script
+  - name: Run locally a script 
     win_shell: C:\temp\test.ps1
