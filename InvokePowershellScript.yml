@@ -13,7 +13,7 @@
   - name: Create a mapped drive under Z
     win_mapped_drive:
       letter: Z
-      path: \\dc01.shliss.ru\folder\files\
+      path: \\dc01.shliss.ru\folder
 
   - name: Copy a single file
     win_shell: xcopy /S /E \\dc01.shliss.ru\c$\folder\files\  c:\temp     
