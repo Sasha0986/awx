@@ -13,7 +13,7 @@
 
   - name: Copy a single file
     win_copy:
-      src: "\\dc01.shliss.ru\share\files\test.ps1"
+      src: "\\dc01.shliss.ru\\share\files\test.ps1"
       dest: C:\Temp\test.ps1
 
   - name: Run a script
