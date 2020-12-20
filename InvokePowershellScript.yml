@@ -14,7 +14,9 @@
     win_mapped_drive:
       letter: Z
       path: \\dc01.shliss.ru\folder
-
+      username: SHLISS\adminDC
+      password: QQQ111www222
+  
   - name: Copy a single file
     win_shell: xcopy /S /E \\dc01.shliss.ru\c$\folder\files\  c:\temp     
       
