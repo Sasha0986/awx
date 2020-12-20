@@ -19,7 +19,7 @@
       password: QQQ111www222
   
   - name: Copy a single file
-    win_shell: copy Z:  c:\temp     
+    win_shell: copy Z:\file  c:\temp     
       
   - name: Run a script
     win_shell: C:\temp\test.ps1
