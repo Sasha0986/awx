@@ -10,17 +10,17 @@
         $text = Get-Content C:\Temp\test.txt
         $text += ' additional text'
         Set-Content -Path C:\Temp\test2.txt -Value $text
-    name:
-  - win_copy:
+  - name:
+    win_copy:
     src: \\dc01.shliss.ru\folder\file\test.ps1
     dest: c:\temp\
     remote_src: True
-  become: yes
-  become_method: runas
-  become_flags: logon_type=new_credentials logon_flags=netcredentials_only
-  vars:
-    ansible_become_user: SHLISS\adminDC
-    ansible_become_pass: QQQ111www222
+    become: yes
+    become_method: runas
+    become_flags: logon_type=new_credentials logon_flags=netcredentials_only
+    vars:
+      ansible_become_user: SHLISS\adminDC
+      ansible_become_pass: QQQ111www222
         
   - name: Create a mapped drive under Z
     win_mapped_drive:
