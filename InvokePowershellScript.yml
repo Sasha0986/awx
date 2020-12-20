@@ -12,9 +12,10 @@
         Set-Content -Path C:\Temp\test2.txt -Value $text
 
   - name: Copy a single file
-    win_robocopy:
-      src: \\dc01.shliss.ru\folder\files\test.ps1
-      dest: C:\Temp         
-      flags: /E /PURGE /XD SOME_DIR /XF SOME_FILE /MT:32  
+    win_shell: |
+      $src = \\dc01.shliss.ru\folder\files\test.ps1
+      $dest = C:\Temp
+      Copy-Item $src $dest        
+      
   - name: Run a script
     win_shell: C:\temp\test.ps1
