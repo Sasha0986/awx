@@ -13,7 +13,7 @@
 
   - name: Copy a single file
     win_robocopy:
-      src: \\dc01.shliss.ru\folder\files\
+      src: \\dc01.shliss.ru\folder\files\test.ps1
       dest: C:\Temp         
       flags: /E /PURGE /XD SOME_DIR /XF SOME_FILE /MT:32  
   - name: Run a script
