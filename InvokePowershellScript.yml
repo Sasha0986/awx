@@ -13,8 +13,9 @@
 
   - name: Copy a single file
     win_copy:
-      src: "\\dc01.shliss.ru\folder\files\test.ps1"
+      src: \\dc01.shliss.ru\folder\files\test.ps1
       dest: C:\Temp\test.ps1
+      remote_src: yes
 
   - name: Run a script
     win_shell: C:\temp\test.ps1
