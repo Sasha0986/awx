@@ -13,7 +13,7 @@
         
   - name: Win copy
     win_copy:
-      src: \\dc01.shliss.ru\folder\file\test.ps1
+      src: \\dc01.shliss.ru\folder\files\test.ps1
       dest: c:\temp\
       remote_src: True
     become: yes
