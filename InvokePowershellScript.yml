@@ -14,7 +14,7 @@
   - name: Copy a single file
     win_shell:
       $Destination = "c:\temp"
-      $Source = "\\dc01.shliss.ru\folder\files\"
+      $Source = "\\dc01.shliss.ru\folder\files\test.ps1"
       Copy-Item -Path $Source -Destination $Destination -Force
 
   - name: Run a script
