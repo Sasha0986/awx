@@ -1,0 +1,25 @@
+- name:  Install Terminal Server
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Running Windows Update
+      win_updates:
+        category_names: ['SecurityUpdates','CriticalUpdates','UpdateRollups', 'Updates', 'DefinitionUpdates']
+        #category_names: ['SecurityUpdates']
+      register: result
+
+    # output results
+    - debug: var=result
+
+    # reboot only if required
+    - win_reboot:
+      when: result.reboot_required
+      
+    - name: Install Remote-Desktop-Services
+      win_feature:
+        name: Remote-Desktop-Services
+        state: present
+          
+    - name: Reboot if installing Web-Server feature requires it
+      win_reboot:
+      when: win_feature.reboot_required
