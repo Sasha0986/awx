@@ -1,0 +1,8 @@
+- name:  Change timezone
+  hosts: all
+  gather_facts: false
+  tasks:
+    
+    - name: Set timezone to Russian Standard Time (GMT+03:00)
+      win_timezone:
+        timezone: Russian Standard Time
