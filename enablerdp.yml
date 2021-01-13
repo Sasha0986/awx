@@ -1,10 +1,15 @@
-- name: Windows | Check for xRemoteDesktopAdmin Powershell module
-  win_psmodule:
-    name: xRemoteDesktopAdmin
-    state: present
+- name:  Enable Remote Desktop Protocol
+  hosts: all
+  gather_facts: false
+  tasks:
 
-- name: Windows | Enable Remote Desktop
-  win_dsc:
-    resource_name: xRemoteDesktopAdmin
-    Ensure: present
-    UserAuthentication: Secure
+    - name: Windows | Check for xRemoteDesktopAdmin Powershell module
+      win_psmodule:
+        name: xRemoteDesktopAdmin
+        state: present
+
+    - name: Windows | Enable Remote Desktop
+      win_dsc:
+        resource_name: xRemoteDesktopAdmin
+        Ensure: present
+        UserAuthentication: Secure
