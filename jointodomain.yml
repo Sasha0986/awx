@@ -4,10 +4,10 @@
   tasks:
     - name: "Join Domain"
       win_domain_membership:
-        dns_domain_name: shliss.ru
-        hostname: ms02
-        domain_admin_user: ansible@corp.enterprise.local
-        domain_admin_password: enterpass
+        dns_domain_name: "{{ domain }}"
+        hostname: "{{ compname }}"
+        domain_admin_user: "{{ domadmin }}"
+        domain_admin_password: "{{ pass }}"
         state: domain
       register: domain_state
     - win_reboot:
