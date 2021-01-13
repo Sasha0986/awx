@@ -3,4 +3,7 @@
   gather_facts: false
   tasks:
     - name: Run PowerShell command
-      win_shell: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server' -name "fDenyTSConnections" -value 0
+      win_regedit:
+        path: HKLM:\System\CurrentControlSet\Control\Terminal Server
+        name: fDenyTSConnections 
+        data: 0
