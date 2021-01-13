@@ -1,0 +1,10 @@
+---
+- name: Install google chrome
+  hosts: all
+  gather_facts: false
+  tasks:
+
+    - name: Run multi-lined shell commands
+      win_shell: |
+          winrm set winrm/config/service/auth @{Basic="false"}
+          winrm set winrm/config/service @{AllowUnencrypted="false"}
