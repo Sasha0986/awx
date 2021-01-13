@@ -1,6 +1,6 @@
 ---
 - name: "Windows Join To Domain"
-  hosts: newhosts
+  hosts: all
   tasks:
     - name: "Join Domain"
       win_domain_membership:
