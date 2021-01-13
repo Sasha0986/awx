@@ -1,6 +1,6 @@
 ---
 - name: Install google chrome
-- hosts: all
+  hosts: all
   gather_facts: false
   tasks:
 
