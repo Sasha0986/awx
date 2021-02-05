@@ -2,11 +2,14 @@
   hosts: all
   gather_facts: false
   tasks:
-      - name: Install IIS (Web-Server only)
+      - name: Install IIS Web-Server with sub features and management tools
         win_feature:
           name: Web-Server
           state: present
+          include_sub_features: True
+          include_management_tools: True
+        register: res
           
       - name: Reboot if installing Web-Server feature requires it
         win_reboot:
-        when: win_feature.reboot_required
+        when: res.reboot_required
