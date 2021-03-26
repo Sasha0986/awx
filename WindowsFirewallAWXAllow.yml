@@ -15,7 +15,7 @@
           protocol: tcp
       - name: Add firewall rule for RDP when remoteip is IPv4 
         win_firewall_rule:
-          name: AWXwinRMAllow
+          name: AWXRDPAllow
           enabled: yes
           state: present
           localport: 3389
