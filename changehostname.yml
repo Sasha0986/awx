@@ -5,7 +5,7 @@
        
     - name: Change the hostname to sample-hostname
       win_hostname:
-        name: "{{ compname }}"
+        name: "{{ 12345 }}"
       register: res
 
     - name: Reboot
